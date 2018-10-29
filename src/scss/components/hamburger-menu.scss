@@ -1,0 +1,96 @@
+.menu {
+    background-color: transparent;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    text-indent: -9999px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 2;
+    @media #{$tablet-land-breakpoint} {
+        display: none;
+    }
+    &:focus {
+        outline: none;
+    }
+
+    span {
+        display: block;
+        position: absolute;
+        top: 25px;
+        left: 10px;
+        right: 10px;
+        height: 3px;
+        background-color: $grey-blue;
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $grey-blue;
+            content: "";
+        }
+        &:before {
+            top: -9px;
+        }
+        &:after {
+            bottom: -9px;
+        }
+    }
+
+    &--bars {
+        span {
+            transition: background-color 0s 0.3s;
+            &:before,
+            &:after {
+                transition-duration: 0.3s, 0.3s;
+                transition-delay: 0.3s, 0s;
+            }
+            &:before {
+                transition-property: top, transform;
+            }
+            &:after {
+                transition-property: bottom, transform;
+            }
+            
+        }
+        &.active {
+            span {
+                background-color: transparent;
+                &:before {
+                    top: 0;
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    transition-delay: 0s, 0.3s;
+                }
+                &:after {
+                    bottom: 0;
+                    -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                    transition-delay: 0s, 0.3s;
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        height: 50px;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 50px;
+        z-index: 3;
+    }
+}
