@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import usersApi from '../Api/usersApi'
 import Menu from './Navigations/Menu'
 import Burger from './Navigations/Burger'
 import Navbar from './Navigations/Navbar/Navbar'
@@ -15,11 +16,17 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://randomuser.me/api/?results=20&nat=gb')
-      .then(results => results.json())
+    // fetch('https://randomuser.me/api/?results=20&nat=gb')
+    //   .then(results => results.json())
+    //   .then(data => {
+    //     this.setState({users: data.results})
+    //   })
+
+    
+    usersApi()
       .then(data => {
         this.setState({users: data.results})
-      })      
+      })
   }
 
   toggleMenu() {
