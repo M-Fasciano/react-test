@@ -1,13 +1,22 @@
-# react-test
+Collective Reac Test
+===============
 
-## Available Scripts
+To build the front end, please ensure you have node installed: https://nodejs.org/en/
 
-In the project directory, you can run:
+You will also need gulp-cli
 
-* **npm install**
+    npm install -g gulp-cli
 
-* **npm start**
+## Commands
 
+###Install dependencies
+
+    npm install
+
+###Build FE project
+
+    npm start
+  
 ## Author
 
 * **Michele Fasciano**
