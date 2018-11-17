@@ -49,7 +49,7 @@ html {
 **********************************************************/
 
 
-@mixin border-radius($value){
+@mixin border-radius($value) {
     -moz-border-radius: $value;
     -webkit--radius: $value;
     border-radius: $value;
