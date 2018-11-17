@@ -1,32 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
-
-const MainContent = styled.section`
-  margin-top: 80px;
-  padding: 0 10px;
-
-  @media (min-width: 769px) {
-    margin-top: 100px;
-    padding: 0 30px;
-  }
-  @media (min-width: 1024px) {
-    margin-left: 200px;
-    max-width: 55%;
-    padding-right: 100px;
-  }
-  @media (min-width: 1224px) {
-    max-width: 60%;
-    padding: 0 50px;
-
-    p {
-      margin-right: 100px;
-    }
-  }
-
-  h1 {
-    font-size: 14px;
-  }
-`
 
 class Main extends React.Component {
 
@@ -45,7 +17,7 @@ class Main extends React.Component {
 
   render() {
     return (
-      <MainContent>
+      <section className="main-content">
         <h1>User</h1>
         <p>If you want to get contact information to specific user just select a group and then select him from the list below.</p>
         <span>Select group of users</span>
@@ -58,7 +30,7 @@ class Main extends React.Component {
           <ul>
             {
               this.props.users.map((user, index) => {
-                return (
+                return(
                   <li 
                     key={index} 
                     className={index === this.state.selected ? 'active': null} 
@@ -87,7 +59,7 @@ class Main extends React.Component {
             }
           </ul>
         </div>
-      </MainContent>
+      </section>
     )
   }
 }

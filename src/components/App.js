@@ -15,7 +15,14 @@ class App extends Component {
     this.toggleMenu = this.toggleMenu.bind(this)
   }
 
-  componentDidMount() {    
+  componentDidMount() {
+    // fetch('https://randomuser.me/api/?results=20&nat=gb')
+    //   .then(results => results.json())
+    //   .then(data => {
+    //     this.setState({users: data.results})
+    //   })
+
+    
     usersApi()
       .then(data => {
         this.setState({users: data.results})

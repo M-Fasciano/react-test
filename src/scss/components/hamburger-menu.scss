@@ -64,11 +64,11 @@
             &:after {
                 transition-property: bottom, transform;
             }
+            
         }
         &.active {
             span {
                 background-color: transparent;
-                transition-delay: 0s, 0.3s;
                 &:before {
                     top: 0;
                     -webkit-transform: rotate(45deg);
