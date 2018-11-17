@@ -1,4 +1,23 @@
 .main-content {
+    margin-top: 80px;
+    @include rem(padding, 0 10px);
+    @media #{$tablet-breakpoint} {
+        margin-top: 100px;
+        @include rem(padding, 0 30px);
+    }
+    @media #{$tablet-land-breakpoint} {
+        margin-left: 200px;
+        max-width: 55%;
+        padding-right: 100px;
+    }
+    @media #{$desktop-breakpoint} {
+        max-width: 60%;
+        @include rem(padding, 0 50px);
+        p {
+            margin-right: 100px;
+        }
+    }
+
     &__users {
         margin-top: 50px;
         @media #{$mobile-breakpoint} {
