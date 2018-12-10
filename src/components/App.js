@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import usersApi from '../Api/usersApi'
-import Menu from './Navigations/Menu'
-import Burger from './Navigations/Burger'
+import Menu from './Navigations/Menu/Menu'
+import Burger from './Navigations/Burger/Burger'
 import Navbar from './Navigations/Navbar/Navbar'
-import Main from './Main'
+import Main from './Navigations/Main/Main'
 
 class App extends Component {
+  // default configuration of the componet 
   constructor(props) {
     super(props)
     this.state = {
@@ -15,14 +16,9 @@ class App extends Component {
     this.toggleMenu = this.toggleMenu.bind(this)
   }
 
-  componentDidMount() {
-    // fetch('https://randomuser.me/api/?results=20&nat=gb')
-    //   .then(results => results.json())
-    //   .then(data => {
-    //     this.setState({users: data.results})
-    //   })
-
-    
+  // After all the elements of the page 
+  // is rendered correctly, this method is called
+  componentDidMount() { 
     usersApi()
       .then(data => {
         this.setState({users: data.results})
@@ -35,6 +31,7 @@ class App extends Component {
     })
   }
 
+  // render method creates the virtual DOM
   render() {
     return (
       <React.Fragment>
