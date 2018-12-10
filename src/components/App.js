@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import usersApi from '../Api/usersApi'
-import Menu from './Navigations/Menu'
-import Burger from './Navigations/Burger'
+import Menu from './Navigations/Menu/Menu'
+import Burger from './Navigations/Burger/Burger'
 import Navbar from './Navigations/Navbar/Navbar'
-import Main from './Main'
+import Main from './Main/Main'
 
 class App extends Component {
   constructor(props) {

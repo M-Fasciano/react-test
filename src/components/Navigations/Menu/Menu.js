@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import icon from '../../images/sprite.png'
-import SideMenu from './Menu/SideMenu'
-import SideMenuItem from './Menu/SideMenuItems'
+import icon from '../../../images/sprite.png'
+import SideMenu from './SideMenu'
+import SideMenuItem from './SideMenuItems'
 
 const Icon = styled.span`
   background: url(${icon}) no-repeat;
