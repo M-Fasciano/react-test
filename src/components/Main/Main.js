@@ -33,7 +33,7 @@ class Main extends React.Component {
                   >
                     <img src={user.picture.thumbnail} alt={`${user.name.first} ${user.name.last}`} />
                     {`${user.name.first} ${user.name.last}`}
-                    <MainUserInfo/>
+                    <MainUserInfo user={user} />
                   </li>
                 )
               })
