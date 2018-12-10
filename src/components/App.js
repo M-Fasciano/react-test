@@ -42,7 +42,7 @@ class App extends Component {
         />
         <Main users={this.state.users} />
       </React.Fragment>
-    );
+    )
   }
 }
 
