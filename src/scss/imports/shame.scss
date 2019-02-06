@@ -4,24 +4,19 @@
         overflow: hidden;
         position: fixed;
         &:before {
+            align-items: center;
             background: $grey;
-            content: "";
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 105%;
-            z-index: 2;
-        }
-        &:after {
             color: $grey-blue;
             content: "Please use Portrait Orientation";
+            display: flex;
             @include rem(font-size, 3rem);
-            position: absolute;
-            text-align: center;
-            top: 7%;
+            height: 100vh;
+            justify-content: center;
+            left: 0;
+            position: relative;
+            top: 0;
             width: 100%;
-            z-index: 3;
+            z-index: 10;
         }
     }
 }
