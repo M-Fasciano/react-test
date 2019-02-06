@@ -1,6 +1,5 @@
 .main-content {
-    margin-top: 80px;
-    @include rem(padding, 0 10px);
+    @include rem(padding, 80px 10px 0);
     @media #{$tablet-breakpoint} {
         margin-top: 100px;
         @include rem(padding, 0 30px);
