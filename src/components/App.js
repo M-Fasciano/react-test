@@ -6,18 +6,22 @@ import Navbar from './Navigations/Navbar/Navbar'
 import Main from './Main/Main'
 
 class App extends Component {
-  // default configuration of the componet 
+  /* Initializing local state by assigning 
+   * an object to this.state
+   */
   constructor(props) {
     super(props)
     this.state = {
       menu: false,
       users: []
     }
+    // Binding event handler method to an instance
     this.toggleMenu = this.toggleMenu.bind(this)
   }
 
-  // After all the elements of the page 
-  // is rendered correctly, this method is called
+  /* After all the elements of the page 
+   * is rendered correctly, this method is called
+   */
   componentDidMount() { 
     usersApi()
       .then(data => {
@@ -25,6 +29,7 @@ class App extends Component {
       })
   }
 
+  // event handler for burger
   toggleMenu() {
     this.setState({ 
       menu: !this.state.menu
