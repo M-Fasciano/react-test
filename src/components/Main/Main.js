@@ -19,7 +19,10 @@ class Main extends React.Component {
 
   render() {
     return (
-      <section className="main-content">
+      <section 
+        className={this.props.className}
+        onClick={this.props.toggleClassName}
+      >
         <MainHeader/>
         <div className="main-content__users">
           <ul>

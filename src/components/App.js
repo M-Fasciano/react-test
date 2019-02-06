@@ -44,9 +44,12 @@ class App extends Component {
           className={this.state.menu ? "menu menu--bars active" : "menu menu--bars"}
           toggleClassName={this.toggleMenu}
         />
-        <Main users={this.state.users} />
+        <Main
+          className={this.state.menu ? "main-content active" : "main-content"}
+          users={this.state.users} 
+        />
       </React.Fragment>
-    );
+    )
   }
 }
 

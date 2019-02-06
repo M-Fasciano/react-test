@@ -2,7 +2,7 @@
     background: $grey-blue;
     bottom: 0;
     color: $white;
-    height: 100%;
+    height: calc(100% - 50px);
     left: -100%;
     @include rem(padding, 10px);
     position: absolute;
@@ -11,6 +11,7 @@
     width: 100%;
     transition: left .5s;
     @media #{$tablet-land-breakpoint} {
+        height: 100vh;
         left: 0;
         max-width: 200px;
         position: fixed;
