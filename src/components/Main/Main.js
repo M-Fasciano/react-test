@@ -4,8 +4,7 @@ import MainUserInfo from './MainUserInfo'
 import styled from 'styled-components'
 
 const MainContent = styled.section`
-  margin-top: 80px;
-  padding: 0 10px;
+  padding: 80px 10px 0;
 
   @media (min-width: 769px) {
     margin-top: 100px;
