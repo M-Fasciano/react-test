@@ -22,22 +22,20 @@ const Icon = styled.span`
   ${props => props.contact && 'background-position: -267px 0'}
 `
 
-class Menu extends React.Component {
-  render() {
-    return (
-      <SideMenu
-        className={this.props.className}
-        onClick={this.props.toggleClassName}
-      >
-        <SideMenuItem link="#"><Icon home />Home</SideMenuItem>
-        <SideMenuItem link="#"><Icon blog />Blog</SideMenuItem>
-        <SideMenuItem link="#"><Icon community />Community</SideMenuItem>
-        <SideMenuItem link="#"><Icon contest />Contest</SideMenuItem>
-        <SideMenuItem link="#"><Icon about="false" />About</SideMenuItem>
-        <SideMenuItem link="#"><Icon contact />Contact</SideMenuItem>
-      </SideMenu>
-    )
-  }
+const Menu = (props) => {
+  return (
+    <SideMenu
+      className={props.className}
+      onClick={props.toggleClassName}
+    >
+      <SideMenuItem link="#"><Icon home />Home</SideMenuItem>
+      <SideMenuItem link="#"><Icon blog />Blog</SideMenuItem>
+      <SideMenuItem link="#"><Icon community />Community</SideMenuItem>
+      <SideMenuItem link="#"><Icon contest />Contest</SideMenuItem>
+      <SideMenuItem link="#"><Icon about="false" />About</SideMenuItem>
+      <SideMenuItem link="#"><Icon contact />Contact</SideMenuItem>
+    </SideMenu>
+  )
 }
 
 export default Menu

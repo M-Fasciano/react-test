@@ -25,6 +25,12 @@ const MainContent = styled.section`
     }
   }
 
+  &.active {
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+  }
+
   h1 {
     font-size: 14px;
   }
@@ -47,7 +53,10 @@ class Main extends React.Component {
 
   render() {
     return (
-      <MainContent>
+      <MainContent 
+        className={this.props.className}
+        onClick={this.props.toggleClassName}
+      >
         <MainHeader/>
 
         <div className="main-content__users">
