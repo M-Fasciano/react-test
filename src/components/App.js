@@ -12,6 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      loading: false,
       menu: false,
       users: []
     }
@@ -22,10 +23,16 @@ class App extends Component {
   /* After all the elements of the page 
    * is rendered correctly, this method is called
    */
-  componentDidMount() { 
+  componentDidMount() {
+    this.setState({
+      loading: true
+    })
     usersApi()
       .then(data => {
-        this.setState({users: data.results})
+        this.setState({
+          loading: false,
+          users: data.results
+        })
       })
   }
 
@@ -50,6 +57,7 @@ class App extends Component {
           toggleClassName={this.toggleMenu}
         />
         <Main
+          loading={this.state.loading}
           className={this.state.menu ? "main-content active" : "main-content"}
           users={this.state.users} 
         />

@@ -24,25 +24,27 @@ class Main extends React.Component {
         onClick={this.props.toggleClassName}
       >
         <MainHeader/>
-        <div className="main-content__users">
-          <ul>
-            {
-              this.props.users.map((user, index) => {
-                return (
-                  <li 
-                    key={index} 
-                    className={index === this.state.selected ? 'active': null} 
-                    onClick={()=>this.toggleClass(index)} 
-                  >
-                    <img src={user.picture.thumbnail} alt={`${user.name.first} ${user.name.last}`} />
-                    {`${user.name.first} ${user.name.last}`}
-                    <MainUserInfo user={user} />
-                  </li>
-                )
-              })
-            }
-          </ul>
-        </div>
+        {this.props.loading ? <h1 style={{ fontSize: '2rem', paddingTop: '2rem' }}>Loading...</h1> : 
+          <div className="main-content__users">
+            <ul>
+              {
+                this.props.users.map((user, index) => {
+                  return (
+                    <li 
+                      key={index} 
+                      className={index === this.state.selected ? 'active': null} 
+                      onClick={()=>this.toggleClass(index)} 
+                    >
+                      <img src={user.picture.thumbnail} alt={`${user.name.first} ${user.name.last}`} />
+                      {`${user.name.first} ${user.name.last}`}
+                      <MainUserInfo user={user} />
+                    </li>
+                  )
+                })
+              }
+            </ul>
+          </div>
+        }
       </section>
     )
   }
