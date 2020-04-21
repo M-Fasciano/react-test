@@ -4,14 +4,22 @@ import Menu from './Navigations/Menu/Menu'
 import Burger from './Navigations/Burger/Burger'
 import Navbar from './Navigations/Navbar/Navbar'
 import Main from './Main/Main'
+import StickyBar from './StickyBar/StickyBar'
+import Footer from './Footer/Footer'
+
+const divStyle = {
+  position: 'relative'
+};
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      height: 0,
       menu: false,
       users: []
     }
+    this.footer = React.createRef()
     this.toggleMenu = this.toggleMenu.bind(this)
   }
 
@@ -20,6 +28,8 @@ class App extends Component {
       .then(data => {
         this.setState({users: data.results})
       })
+    const height = document.getElementById('footer').clientHeight
+    this.setState({ height })
   }
 
   toggleMenu() {
@@ -40,10 +50,23 @@ class App extends Component {
           className={this.state.menu ? "menu menu--bars active" : "menu menu--bars"}
           toggleClassName={this.toggleMenu}
         />
-        <Main
-          className={this.state.menu ? "active" : ""} 
-          users={this.state.users} 
-        />
+        <div style={divStyle}>
+          <Main
+            className={this.state.menu ? "active" : ""} 
+            users={this.state.users} 
+          />
+          <StickyBar
+            bottomThreshold={this.state.height}
+            stickyStyles={{
+              backgroundColor: '#333',
+              color: '#fff',
+              padding: '2rem'
+            }}
+          >
+            StickyBar
+          </StickyBar>
+        </div>
+        <Footer height={this.state.height} />
       </React.Fragment>
     )
   }
